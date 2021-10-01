@@ -9,7 +9,7 @@ namespace Cycles_task2
         int numb;
         int min = 9;
 
-        public void getValue(int n) {
+        public void setValue(int n) {
             numb = n;
         }
 
@@ -31,7 +31,7 @@ namespace Cycles_task2
         static void Main(string[] args)
         {
             Number num1 = new Number();
-            num1.getValue(928374651);
+            num1.setValue(928374651);
             num1.getMin();
             Console.ReadKey();
         }
