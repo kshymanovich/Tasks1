@@ -4,14 +4,14 @@ namespace Factorial
 {
     public class Program
     {
-        long fact = 1;
         public long GetFactorial(long n)
         {
             if (n > 1)
             {
-                fact = n * GetFactorial(n - 1);
+                n = n * GetFactorial(n - 1);
+                return n;
             }
-            return fact;
+            else return 1;
         }
 
         static void Main(string[] args)
