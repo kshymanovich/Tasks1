@@ -6,57 +6,31 @@ using System.Collections;
 // Task 4. дан список целых чисел. Найти два максимальных значения и получить новый список без них. Пример: { 9, 1, 2, 6}, { 1, 2}. 
 namespace Collections_task1
 {
-    class Program
+    class Coll
     {
-        static void Main(string[] args)
+        public void CalcNeg(ArrayList cn, int neg) //1. calculating the number of negative elements in the array
         {
-            
-            //creating the array of random element of user defined size
-            ArrayList cn = new();
-            
-            Console.WriteLine("Enter a number of elements in array:");
-            
-            int nel = int.Parse(Console.ReadLine()); //user defines the number of elements in the array
-
-            Console.WriteLine();
-            Console.WriteLine("The Array is:");
-
-            Random r = new Random(); //elements in the array are randomly generated within (-1000; 1000) range
-            
-            for (int i = 0; i < nel; i++)
-            {
-                cn.Add(r.Next(-1000, 1000));
-            }
-
-            foreach(int i in cn)
-            {
-                Console.Write(i + " ");
-            }
-
-            int neg = 0;
-
-            Console.WriteLine();
-
-            //1. calculating the number of negative elements in the array
             foreach (int i in cn)
+            {
+                if (i < 0)
                 {
-                    if (i < 0)
-                    {
-                        neg++;
-                    }
+                    neg++;
                 }
+            }
 
             Console.WriteLine();
             Console.WriteLine("Task 1. The number of negative values in array is {0}", neg);
+        }
 
-            //2. moving the elements one position forward
+        public void MoveEl(ArrayList cn, int nel) //2. moving the elements one position forward
+        {
             int last = 0;
-            foreach(int i in cn)
-                {
-                    last = (int)i;
-                }
+            foreach (int i in cn)
+            {
+                last = (int)i;
+            }
 
-            object lasto = (object)last; 
+            object lasto = (object)last;
             cn.RemoveAt(nel - 1);
             cn.Insert(0, lasto);
 
@@ -66,12 +40,13 @@ namespace Collections_task1
             {
                 Console.Write(i + " ");
             }
+        }
 
-            //3. index and value of min element
-
+        public void MinEl(ArrayList cn) //3. index and value of min element
+        {
             int minvalue = 1000;
-            
-            
+
+
             foreach (int i in cn)
             {
                 if (minvalue > (int)i)
@@ -87,8 +62,9 @@ namespace Collections_task1
 
             Console.WriteLine("Task 3. Position of minimum value {0} in the array is {1}", minvalue, minindex);
 
-            //Removing two max values from the array
-
+        }
+        public void RemoveMax(ArrayList cn)//4. Removing two max values from the array
+        {
             int maxvalue1 = -1000;
             int maxvalue2 = -1000;
 
@@ -116,6 +92,49 @@ namespace Collections_task1
             {
                 Console.Write(i + " ");
             }
+        }
+
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            //creating the array of random element of user defined size
+            ArrayList cn = new();
+
+            Console.WriteLine("Enter a number of elements in array:");
+
+            int nel = int.Parse(Console.ReadLine()); //user defines the number of elements in the array
+
+            Console.WriteLine();
+            Console.WriteLine("The Array is:");
+
+            Random r = new Random(); //elements in the array are randomly generated within (-1000; 1000) range
+
+            for (int i = 0; i < nel; i++)
+            {
+                cn.Add(r.Next(-1000, 1000));
+            }
+
+            foreach (int i in cn)
+            {
+                Console.Write(i + " ");
+            }
+
+            int neg = 0;
+
+            Console.WriteLine();
+
+            Coll cl = new();
+
+            cl.CalcNeg(cn, neg);
+
+            cl.MoveEl(cn, nel);
+
+            cl.MinEl(cn);
+
+            cl.RemoveMax(cn);
 
             Console.ReadKey();
 
