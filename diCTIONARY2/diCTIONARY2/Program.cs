@@ -12,18 +12,12 @@ namespace Dictionary2
         {
             ArrayList keylist = new();
             int b = 0;
-            string d;
             for (int i = 0; i < dc.Count; i++)
             {
-                d = dc.ElementAt(i).Value;
-                for (int j = 0; j < d.Length; j++)
+                if (dc.ElementAt(i).Value.Contains('s'))
                 {
-                    if (d[j] == 's')
-                    {
-                        keylist.Add((object)dc.ElementAt(i).Key);
-                        b++;
-                        break;
-                    }
+                    keylist.Add((object)dc.ElementAt(i).Key);
+                    b++;
                 }
             }
 
