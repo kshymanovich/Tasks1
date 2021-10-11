@@ -16,28 +16,21 @@ namespace StringTask1
 
         public void WordNum(string str) // 8.подсчитать кол - во слов в строке(словом считается группа символов, отделенная от другой такой же пробелом)
         {
-            int wordcounts = 0;
-            if (str[0] != ' ') wordcounts++;
-            for (int i = 0; i < (str.Length - 1); i++)
-            {
-                if (str[i] == ' ' & str[i + 1] != ' ') wordcounts++;
-            }
+            string[] words = str.Split(' ');
+            int wordcounts = words.Length;
+
             Console.WriteLine("Number of words in your string is " + wordcounts);
         }
 
         public void LongestWord(string str)// 9. определить длину самого длинного слова в строке (словом считается группа символов, отделенная от другой такой же пробелом)
         {
             int longlength = 0;
-            int wordlength = 0;
-            for (int i = 0; i < (str.Length - 1); i++)
+            string[] words = str.Split(' ');
+            for (int i = 0; i < words.Length; i++)
             {
-                if (str[i] != ' ')
-                {
-                    wordlength++;
-                    if (longlength < wordlength) longlength = wordlength;
-                }
-                else wordlength = 0;
+                if (words[i].Length > longlength) longlength = words[i].Length;
             }
+
             Console.WriteLine("The longest word in your string has " + longlength + " symbols");
         }
     }
