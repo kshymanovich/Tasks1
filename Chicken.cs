@@ -8,8 +8,9 @@ namespace Test010_Inheritance.Birds
         {
         }
 
-        public void Fly()
+        public override void Fly()
         {
+            Console.WriteLine($"{_name} is flying");
             Console.WriteLine("but not far");    
         }
     }

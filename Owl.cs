@@ -2,9 +2,9 @@ using Test010_Inheritance.Birds;
 
 namespace Test010_Inheritance.Owls
 {
-    public class Owl : Bird
+    public abstract class Owl : Bird
     {
-        public Owl() : base("owl")
+        public Owl(string type) : base($"{type} owl")
         {
         }
     }

@@ -2,18 +2,19 @@ using System;
 
 namespace Test010_Inheritance.Birds
 {
-    public abstract class Bird
+    public class Bird
     {
-        private readonly string _name;
+        public readonly string _name;
 
-        protected Bird(string name)
+        public Bird(string name)
         {
             _name = name;
         }
 
-        public void Fly()
+        public virtual void Fly()
         {
             Console.WriteLine($"{_name} is flying");            
         }
+
     }
 }

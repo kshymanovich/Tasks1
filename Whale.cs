@@ -1,6 +1,11 @@
 namespace Test010_Inheritance.Fishes
 {
-    public class Whale
+    public class Whale : Fish
     {
+        public Whale() : base("whale")
+        {
+        
+        }
     }
+
 }

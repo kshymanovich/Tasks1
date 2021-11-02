@@ -4,11 +4,15 @@ namespace Test010_Inheritance.Fishes
 {
     public abstract class Fish
     {
-        public abstract string GetName();
+        public string Name { get; set; }
+        public Fish(string name)
+        {
+            Name = name;
+        }
 
         public void Swim()
         {
-            Console.WriteLine($"{GetName()} is swimming");
+            Console.WriteLine($"{Name} is swimming");
         }
     }
 }

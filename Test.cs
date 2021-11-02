@@ -27,8 +27,8 @@ namespace Test010_Inheritance
         [Test]
         public void Test02()
         {
-            /*Cat cat = new Cat();
-            cat.Run();*/
+            Cat cat = new Cat();
+            cat.Run();
         }
 
         /// <summary>
@@ -37,7 +37,8 @@ namespace Test010_Inheritance
         [Test]
         public void Test03()
         {
-            new Parrot().Fly();
+            Parrot parrot = new Parrot();
+            parrot.Fly();
         }
 
         /// <summary>
@@ -48,7 +49,7 @@ namespace Test010_Inheritance
         [Test]
         public void Test04()
         {
-            /*new Gull().Fly();*/
+            new Gull().Fly();
         }
 
         /// <summary>
@@ -77,7 +78,7 @@ namespace Test010_Inheritance
         [Test]
         public void Test06()
         {
-            /*new Bird("pterodactyl").Fly();*/
+            new Bird("pterodactyl").Fly();
         }
 
         /// <summary>
@@ -107,7 +108,7 @@ namespace Test010_Inheritance
         [Test]
         public void Test08()
         {
-            /*new Whale().Swim();*/
+            new Whale().Swim();
         }
 
         /// <summary>
@@ -129,6 +130,17 @@ namespace Test010_Inheritance
         [Test]
         public void Test09()
         {
+            
+            Parrot parrot = new Parrot();
+            Chicken chicken = new Chicken();
+            Penguin penguin = new Penguin();
+            Gull gull = new Gull();
+            Bird[] birds1 = new Bird[] {parrot, chicken, penguin, gull};
+            foreach (Bird j in birds1)
+            {
+                j.Fly();
+            }
+
         }
 
         /// <summary>
@@ -150,7 +162,7 @@ namespace Test010_Inheritance
             Chicken chicken = new Chicken();
             Parrot parrot = new Parrot();
             huntingSimulator.Run(chicken, hunter);
-            /*huntingSimulator.Run(parrot, hunter);*/
+            huntingSimulator.Run(parrot, hunter);
         }
 
         /// <summary>
@@ -165,10 +177,11 @@ namespace Test010_Inheritance
 
         /// интерполяция строк: https://metanit.com/sharp/tutorial/7.5.php
         /// </summary>
+        [Test]
         public void Test11()
         {
-            /*new BarnOwl().Fly();
-            new SnowyOwl().Fly();*/
+            new BarnOwl().Fly();
+            new SnowyOwl().Fly();
         }
     }
 }

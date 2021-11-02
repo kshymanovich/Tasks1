@@ -1,6 +1,6 @@
 namespace Test010_Inheritance.Animals
 {
-    public class Cat
+    public class Cat : Animal
     {
         
     }

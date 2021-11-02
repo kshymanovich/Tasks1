@@ -1,12 +1,13 @@
+using System;
 using Test010_Inheritance.Birds;
 
 namespace Test010_Inheritance.Hunting
 {
     public class HuntingSimulator
     {
-        public void Run(Chicken chicken, Hunter hunter)
+        public void Run(Bird bird, Hunter hunter)
         {
-            chicken.Fly();
+            bird.Fly();
             hunter.Shoot();
         }
     }
